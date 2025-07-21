@@ -1,51 +1,43 @@
 
-# Monad Wallet Checker Backend
+# Monad Wallet Checker
 
-This Node.js backend checks the following for any Monad Testnet wallet:
+This is a simple front-end tool to check activity on the Monad testnet wallet, focused on SBT ownership and transaction history.
 
-- Total wallet balance
-- Total transaction count
-- Early user status (based on first tx block)
-- Whether wallet holds:
-  - Million NADs SBT
-  - Cypher Games SBT
+## ✅ Features
 
-## 🛠 Setup
+- Input Monad wallet address
+- Connects to public Monad RPC endpoint
+- Checks balance (MONAD)
+- Placeholder hooks for SBT and transaction tracking
 
-```bash
-git clone https://github.com/your-username/monad-wallet-backend.git
-cd monad-wallet-backend
-npm install
-npm start
-```
+## 🛠 Requirements
 
-## 📡 API Endpoint
+- Static hosting (GitHub Pages or similar)
+- Optional: Backend API for full SBT and activity tracking
 
-**GET /check/:wallet**  
-Example: `/check/0xabc123...`
+## 🚀 Deploy on GitHub
 
-Returns:
-```json
-{
-  "address": "0x...",
-  "balance": "0.0283",
-  "transactions": 32,
-  "isEarlyUser": true,
-  "hasMillionNadsSBT": true,
-  "hasCypherGamesSBT": false,
-  "gmonad": true
-}
-```
+1. Fork or create a new repo on GitHub.
+2. Upload these files:
+    - index.html
+    - main.js
+    - style.css
+    - README.md
+3. Commit and push.
+4. Go to **Settings > Pages** and enable GitHub Pages from the main branch (`/root`).
+5. Your tool will be live at: `https://<your-username>.github.io/<repo-name>/`
 
-## 🚀 Deploy on Render.com (Free Tier)
+---
 
-1. Go to https://render.com/
-2. Create new Web Service
-3. Connect GitHub repo
-4. Set Build Command: `npm install`
-5. Set Start Command: `npm start`
-6. Environment: Node 18+
+**SBT Contracts to integrate** (on Monad testnet):
 
-## 🧠 Notes
-- Make sure to keep RPC and ABI consistent with Monad Testnet.
-- Works well with the front-end repo you already deployed on GitHub.
+- 1 Million NADs SBT: `0x922da3512e2bebbe32bcce59adf7e6759fb8cea2`
+- Cypher Games SBT: `0x76d37bedcf864aa2bd848b7286f1be8d42f63cb6`
+
+RPC: `https://rpc-testnet.monadinfra.com/`
+
+---
+
+## 🧠 Disclaimer
+
+This is a front-end-only prototype. To detect contract interactions and SBT holdings, use a Monad indexer, logs, or custom smart contract query engine.
